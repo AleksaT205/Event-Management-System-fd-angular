@@ -1,0 +1,192 @@
+<div class="glaviSaBarom">
+
+<div class="glavni">
+    <form class="forma"   >
+        <div a routerLink="/pocetna" class="text">NigniteEMS</div>
+        <div  class="text1">Create an account</div>
+
+        <form  [formGroup]="registerForm" class="example-form">
+
+
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td><mat-form-field  class="example-full-width">
+                            <mat-label>First name</mat-label>
+                            <input matInput 
+                            formControlName="firstName"
+                            required
+                            (keyup)="onChangeFirstName($event)">
+                            <mat-hint>
+                                <span class="text-danger"
+                                *ngIf="(registerFormControl.firstName.touched || submitted) && registerFormControl.firstName.errors?.required">
+                                First name is required
+                            </span>
+                            </mat-hint>
+                        </mat-form-field>
+                        
+                    </td>
+                    <td><mat-form-field class="example-full-width">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput
+                             formControlName="lastName" 
+                             required 
+                             (keyup)="onChangeLastName($event)">
+                             <mat-hint> 
+                                <span class="text-danger"
+                        *ngIf="(registerFormControl.lastName.touched || submitted) && registerFormControl.lastName.errors?.required">
+                        Last name is required
+                    </span>
+                             </mat-hint>
+                        </mat-form-field>
+                        
+                    </td>
+
+                </tr>
+            </table>
+
+            <p>
+                <mat-form-field>
+                    <mat-label>Gender</mat-label>
+                    <mat-select
+                     (selectionChange)="onChangeGender($event)"
+                     formControlName="gender" 
+                    required >
+                        <mat-option value="M">Male</mat-option>
+                        <mat-option value="F">Female</mat-option>
+                    </mat-select>
+                    <mat-hint> 
+                        <span class="text-danger"
+                        *ngIf="(registerFormControl.gender.touched || submitted) && registerFormControl.gender.errors?.required">
+                        Gender is required
+                    </span>
+                    </mat-hint>
+                </mat-form-field>
+                
+            </p>
+            
+
+            <p>
+                <mat-form-field>
+                    <mat-label>Birthday</mat-label>
+                    <input 
+                    (dateChange)="onChangeDate($event)"  
+                    matInput 
+                    formControlName="date" 
+                    required 
+                    [matDatepicker]="picker">
+                    <mat-datepicker-toggle  matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+                    <mat-hint> 
+                        <span class="text-danger"
+                        *ngIf="(registerFormControl.date.touched || submitted) && registerFormControl.date.errors?.required">
+                        Birthday is required
+                    </span>
+                    </mat-hint>
+                </mat-form-field>
+
+            </p>
+          
+
+            <p>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Usernanme</mat-label>
+                    <textarea 
+                    matInput 
+                    formControlName="username" 
+                    required  
+                    (keyup)="onChangeUsername($event)" ></textarea>
+                    <mat-hint>
+                        <span class="text-danger"
+                        *ngIf="(registerFormControl.username.touched || submitted) && registerFormControl.username.errors?.required">
+                        Username is required
+                    </span>
+                    </mat-hint>
+                </mat-form-field>
+
+            </p>
+            
+
+            <p>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <textarea
+                     matInput  
+                     placeholder="example@gmail.com" 
+                     formControlName="email" 
+                     required  
+                     (keyup)="onChangeEmail($event)"></textarea>
+                     <mat-hint>
+                        <span class="text-danger"
+                        *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">
+                        Email is required
+                        </span>
+                    <span class="text-danger"
+                        *ngIf="registerFormControl.email.touched  && registerFormControl.email.errors?.email">
+                        Enter a valid Email address
+                    </span>
+                     </mat-hint>
+                </mat-form-field>
+
+            </p>
+            
+           
+            <p>
+                <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input 
+                    (keyup)="onChangePassword($event)" 
+                    matInput 
+                    formControlName="password" 
+                     required  
+                    [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-hint>
+                        <span class="text-danger"
+                        *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+                        Password is required
+                        </span>
+                    <span class="text-danger"
+                        *ngIf="registerFormControl.password.touched  && registerFormControl.password.errors?.invalidPassword">
+                        Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase and 1 special character
+                    </span>
+                    </mat-hint>
+                  </mat-form-field>
+            </p>
+           
+
+           
+
+            <div class="dugmici"> 
+                <div class="oneBtn">
+                    
+                    <button class="oneBtn" type="button" (click)="onSignup()" mat-raised-button color="primary">Sign Up</button>
+
+                </div>
+                <div class="oneBtn">
+                    <button class="oneBtn"  a routerLink="/login" mat-raised-button color="primary">Log In</button>
+
+                </div>
+            </div>
+
+
+
+          
+
+
+        </form>
+    </form>
+    <div class="slika">
+        <img class="slika"
+            src="https://images.unsplash.com/photo-1487954152950-e0584673b7f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+    </div>
+
+
+
+</div>
+
+<app-bottom-bar class="botom"></app-bottom-bar>
+    
+</div>

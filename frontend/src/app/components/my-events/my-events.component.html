@@ -1,0 +1,62 @@
+<div class="glavni">
+    <app-edit-event [eventForChange]="eventForPopup" *ngIf="eventInformationPopup" (closePopup)="close()"
+        class="eventInformationPage"> </app-edit-event>
+    <div>
+        <app-nav-bar class="navBar"></app-nav-bar>
+        
+    </div>
+
+
+
+
+
+    <!-- EVENTI -->
+    <div class="events">
+        <ng-container *ngFor="let event of userEvents">
+            <div *ngIf="event.place == selectedLocation || selectedLocation == 'All'" class="oneEvent">
+
+
+
+                <mat-card class="example-card ">
+
+
+
+                    <mat-card-header (click)="onOpenEventInfo(event.name)">
+
+
+                        <mat-card-title>Name :{{event.name}}</mat-card-title>
+                        <mat-card-subtitle>Location: {{event.place}}</mat-card-subtitle>
+                        <mat-card-subtitle>Date: {{event.date}}</mat-card-subtitle>
+                        <mat-card-subtitle>Time: {{event.time}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img class="slika" mat-card-image src={{event.picturePath}}>
+
+                    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"> -->
+                    <mat-card-content>
+                        <p>
+                            {{event.shortDescribe}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions class="buttonPosition">
+                        <button (click)="openEvent(event)" class="button" color="primary" mat-button>Edit Event</button>
+                        <form>
+                            <button type="submit" (click)="deleteEvent(event.id)" class="button" color="warn"
+                                mat-button>Delete Event</button>
+
+                        </form>
+                        <a class="button" color="primary" href="https://twitter.com/intent/tweet?text= Name: {{event.name}}%0D%0A Location: {{event.place}} %0D%0A When: {{event.date}} %0D%0A Link: &url=http://localhost:4200/eventsList/eventInformation?eventName={{event.name}}" mat-button>Tweet It</a>
+
+                        <!-- <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">
+                            Tweet</a> -->
+
+
+                    </mat-card-actions>
+
+                </mat-card>
+            </div>
+        </ng-container>
+
+    </div>
+
+    <app-bottom-bar class="botomBar"></app-bottom-bar>
+</div>

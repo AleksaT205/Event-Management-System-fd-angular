@@ -1,0 +1,230 @@
+.glavna{
+    overflow-x: hidden;
+    font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+
+}
+.slika{
+
+    //padding-left: 1%;
+   // padding-right: 2%;
+    padding-top: 2.5%;
+    padding-bottom: 1%;
+
+    width: 100%;
+   // max-width: 100%;
+    max-height: 500px;
+   // height: auto;
+    //border-radius: 132px;
+
+    object-fit: cover;
+    object-position: 50% 75%;
+
+
+    
+ 
+   
+  }
+.btn {
+    @media (max-width: 573px) {
+        display: none;
+    }
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    //background-color: whitesmoke;
+    background-color: rgba(225, 225, 225, 0.459);
+    border-radius: 40px;
+    font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+
+    
+    
+    //color: orange;
+    color: #3f51b5;
+    font-size: 55px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .btn:hover {
+    background-color: whitesmoke;
+    
+    }
+    .createBtn{
+        border-radius: 27px;
+
+    }
+.createText{
+    font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+
+    padding-top: 4%;
+    padding-bottom: 2%;
+  //  color: orange;
+    font-size: 35px;
+    text-align: center;
+    border-bottom: solid black 1px;
+
+}
+.createDonji{
+    display: flex;
+    flex-direction: row;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.removeHr{
+    @media (max-width: 832px) {
+        display: none;
+    }
+}
+.slika2{
+    @media (max-width: 832px) {
+        display: none;
+    }
+    width: 50%;
+    max-width: 100%;
+    max-height: 400px;
+    //height: auto;
+   // max-height: 700px;
+    border-radius: 27px;
+    object-fit: cover;
+    object-position: 50% 75%;
+
+}
+
+.textDugme{
+    @media (max-width: 832px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.text2 {
+   
+    @media (max-width: 832px) {
+        display: none;
+    }
+    font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+
+    align-self: center;
+    //color: orange;
+    font-size: 25px;
+    text-align: center;
+    padding: 12px 24px;
+   // border: none;
+    padding-bottom: 5%;
+    //border-radius: 5px;
+    max-width: 450px;
+}
+
+.mat-mdc-raised-button{
+
+   height: 68px;
+
+
+
+}
+
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+    
+   
+}
+.roundObject{
+    
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(224, 224, 224, 0.587);
+    max-width: 130px;
+    min-width: 130px;
+    min-height: 130px;
+    margin-bottom: 8px;
+    border-radius: 500px;
+}
+.roundObject:hover {
+    background-color: rgba(225, 225, 225, 0.459);
+    cursor: pointer;
+    }
+.listCategories{
+    display: flex;
+    align-items: center;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top: 2%;
+    
+    overflow-x: auto;
+    width: 91%;
+    align-self: center;
+    
+}
+.kategorije{
+    display: flex;
+    flex-direction: column;
+}
+.oneCategory{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+.organizatori{
+    display: flex;
+    flex-direction: column;
+}
+.listOrganizatori{
+    @media (max-width: 1669px) {
+        justify-content: flex-start;
+    }
+    justify-content: center;
+    display: flex;   
+    overflow-x: auto;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    align-self: center;
+    width: 92%;
+}.oneOrganizator{
+    
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+}
+
+.roundObject2{
+    
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(224, 224, 224, 0.587);
+    max-width: 170px;
+    min-width: 170px;
+    min-height: 170px;
+    margin-bottom: 8px;
+    border-radius: 500px;
+}
+.roundObject2:hover {
+    background-color: rgba(225, 225, 225, 0.459);
+    cursor: pointer;
+    }
+.hr{
+    width: 95%;
+}
+.slikaZaHover{
+    border-radius: 26px;
+    object-fit: cover;
+
+}
+.pad{
+    padding-bottom: 3%;
+}
+
+

@@ -1,0 +1,237 @@
+section {
+  
+    display: table;
+   
+  }
+  .example-form{
+    display: flex;
+  }
+  
+  .example-label {
+    font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+    color: #3f51b5;
+    display: table-cell;
+    //font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   // color: orange;
+    font-size: 25px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  .search{
+    padding-left: 1%;
+  }
+  .mat-toolbar{
+   // background-color: black;
+    //color: orange;
+    color: #3f51b5;
+  }
+  
+  .example-button-row {
+    justify-content: right;
+    display: table-cell;
+    max-width: 600px;
+   
+  }
+  .btnn {
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 65px;
+    padding-left: 10%;
+    // margin: 8px 8px 8px 0;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .navBar{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    //
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 1%;
+    padding-right: 1%;
+    //background-color: white;
+    background-color: #ededed;
+    border-bottom: solid black 1px;
+  }
+  .glavna{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden
+    
+  }
+
+  .slika{
+    padding-top: 1%;
+   // padding-left: 1%;
+   // padding-right: 2%;
+   // width: 98%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+    //border-radius: 132px;
+    object-fit: cover;
+    object-position: 50% 57%;
+
+  }
+  .slika2{
+    display: flex;
+    height: 30px;
+    width: 30px;
+  }
+.mdc-card__media:last-child {
+  border-radius: 132px;
+  object-fit: cover;
+
+
+}
+//   eventi
+.example-card {
+    width: 400px;
+    
+  }
+.ech:hover {
+    cursor: pointer;
+        
+  }
+  
+  .example-header-image {
+   // background-image: url('https://images.unsplash.com/photo-1664575599618-8f6bd76fc670?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+  }  
+ 
+ 
+
+  .expiriences{
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .donjiKontejner{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+    //color: orange;
+   // color: #3f51b5;
+    font-size: 25px;
+    min-height: 50px;
+    
+   
+  }
+  .userExpText{
+    display: flex;
+    font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+    font-size: larger;
+  }
+  .eventsMain{
+    display: flex;
+    flex-direction: column;
+  }
+  .expirienceMain{
+    flex-direction: column;
+    padding-bottom: 3%;
+    text-align: center;
+
+  }
+  .expiriecesText{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+    font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+    //color: orange;
+    //color: #3f51b5;
+    font-size: 45px;
+    
+  }
+  .expiriecesText2{
+    padding-top: 5%;
+    //padding-bottom: 5%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+    font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+    //color: orange;
+    //color: #3f51b5;
+    font-size: 45px;
+    
+  }
+  .seeAllText{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    //padding-right: 4%;
+    display: flex;
+    align-self:flex-end;
+    align-items: center;
+    font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+    //color: orange;
+    color: #3f51b5;
+    font-size: 25px;
+  }
+  
+  .seeAllText:hover {
+    background-color: rgba(225, 225, 225, 0.459);
+    border-radius: 15px;
+    cursor: pointer;
+    }
+  .copy-container {
+    margin-top: 15px;
+  }
+  .ems-container{
+    margin-top: 15px;
+  }
+
+  .listEvents{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.eventi{
+  padding-left: 2%;
+  padding-right: 2%;
+    display: flex;
+    flex-direction: column;
+}
+.event{
+  
+  padding-left: 5.5%;
+  padding-right: 5%;
+  padding-top: 4%;
+}

@@ -1,0 +1,121 @@
+<div class="glavna">
+
+  <app-nav-bar></app-nav-bar>
+  
+
+  <!-- SLIKA -->
+  <div class="slika">
+    <img class="slika"
+      src="https://images.unsplash.com/photo-1583470037890-73cc6850b7eb?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    <button a routerLink="/eventsList" class="btn" style="
+    border-radius: 75px;" >Find Events</button>
+  </div>
+
+  <div class="createEvent">
+    <div class="createText">
+      Create An Event
+    </div>
+    
+
+    <div class="createDonji">
+
+      <div class="textDugme">
+
+        <div class="text2">{{longText}}</div>
+
+        <button a routerLink="/createEvent" class="createBtn" mat-raised-button color="primary">Create Event</button>
+
+      </div>
+
+
+
+      <hr class="removeHr">
+
+
+
+      <img class="slika2"
+        src="https://images.unsplash.com/photo-1501238295340-c810d3c156d2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+
+  <div class="kategorije">
+
+    <div class="createText pad">
+      Categories
+    </div>
+    
+
+    <div class="listCategories">
+      <ng-container *ngFor="let category of categories">
+        <div (click)="onCategoryClick(category.type)" class="oneCategory">
+        <mat-card class="roundObject">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>{{category.type}}</mat-card-title>
+             
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      </ng-container>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="organizatori">
+
+    <div class="createText pad">
+      Organizers
+    </div>
+    
+
+    <div class="listOrganizatori">
+      <ng-container *ngFor="let user of users">
+          
+      
+        <div  *ngIf="user.createdEvents?.length "  class="oneOrganizator">
+
+          
+          <div> </div>
+
+          <mat-card class="roundObject2">
+            <mat-card-header>
+              <mat-card-title-group>
+                <img class="slikaZaHover" (mouseover)="onHower(user)" (mouseout)="onImgMouseout()" mat-card-sm-image src={{user.picturePath}}>
+                
+
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-title>{{user.firstName}}</mat-card-title>
+
+            
+          </mat-card>
+        </div>
+    </ng-container>
+    <app-organizer-hover [userForShow]="userForSend" *ngIf="hover"> </app-organizer-hover>
+    </div>
+
+
+
+  </div>
+
+
+
+  <app-bottom-bar></app-bottom-bar>
+
+</div>

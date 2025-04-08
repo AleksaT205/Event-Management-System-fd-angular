@@ -1,0 +1,154 @@
+<div class="glavni">
+    <div>
+        <app-nav-bar class="navBar"></app-nav-bar>
+        
+    </div>
+
+    <div class="navPadding">
+        <div class="filters">
+            <div class="slectFilters">
+
+                <form class="formClass">
+
+                    <mat-form-field>
+                        <mat-label>Location</mat-label>
+                        <mat-select (selectionChange)="onLocationChange($event)" [(value)]="selectedLocation">
+                            <mat-option value="All">All Locations</mat-option>
+                            <mat-option *ngFor="let location of allLocations"
+                                value={{location}}>{{location}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <p> Selected Location: {{selectedLocation}} </p>
+
+
+                </form>
+                <form class="formClass">
+
+                    <mat-form-field>
+                        <mat-label>Categories</mat-label>
+                        <mat-select (selectionChange)="onCategoryChange($event)" [(value)]="selectedCategory">
+                        <!-- <mat-select (selectionChange)="onCategoryChange($event)" [(value)]="categorySelect.type"> -->
+                            <mat-option value="All">All Events </mat-option>
+                            <mat-option *ngFor="let category of categories"
+                                value={{category.type}}>{{category.type}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <p> Selected category: {{selectedCategory}} </p>
+
+
+                </form>
+
+                <form class="formClass">
+
+                    <mat-form-field>
+                        <mat-label>Language</mat-label>
+                        <mat-select (selectionChange)="onLanguageChange($event)" [(value)]="selectedLanguage">
+                            <mat-option value="All">All Languages </mat-option>
+                            <mat-option value="English">English </mat-option>
+                            <mat-option value="German">German </mat-option>
+                            <mat-option value="Spanish">Spanish </mat-option>
+                            <mat-option value="French">French </mat-option>
+                            <mat-option value="Italian">Italian </mat-option>
+
+                        </mat-select>
+                    </mat-form-field>
+                    <p> Selected category: {{selectedLanguage}} </p>
+
+
+                </form>
+
+                <form class="formClass">
+
+                    <mat-form-field>
+                        <mat-label>Sort By Price</mat-label>
+                        <mat-select (selectionChange)="onSortChange($event)">
+                            <mat-option value="up">Low to High </mat-option>
+                            <mat-option value="down">High to Low </mat-option>
+                           
+    
+                        </mat-select>
+                    </mat-form-field>
+    
+    
+                </form>
+
+                <form class="formPrice">
+
+                
+
+                <div class="slideToggle">
+                    <mat-slide-toggle checked={{selectedPriceFlag}} (toggleChange)="onChangePaid()">Free
+                    </mat-slide-toggle>
+    
+                </div>
+             </form>
+
+
+            </div>
+
+            <!-- <div class="radioFilter">
+
+                <mat-radio-group (change)="onChangePaid($event)" aria-label="Select an option" >
+                    <mat-radio-button checked="true" value="0">Free</mat-radio-button>
+                    <mat-radio-button value="1">Paid</mat-radio-button>
+                  </mat-radio-group>
+
+            </div> -->
+            
+            
+
+        </div>
+        <hr>
+
+    </div>
+
+
+
+    <!-- EVENTI -->
+    <div class="events">
+        <ng-container *ngFor="let event of events">
+            <!-- <ng-container *ngIf="event.categories?.type === selectedCategory || selectedLocation == 'All'" > -->
+                <!-- <ng-container *ngIf="event.language === selectedLanguage || selectedLocation == 'All'" > -->
+
+            <div (click)="onOpenEventInfo(event.name)"
+                *ngIf="(event.place == selectedLocation || selectedLocation == 'All') && (event.language == selectedLanguage || selectedLanguage == 'All') && (event.categories?.type == selectedCategory || selectedCategory == 'All') && ((selectedPriceFlag == false ) || (selectedPriceFlag == true && event.price == '0'))" class="oneEvent">
+
+
+
+                <mat-card class="example-card ">
+
+
+
+                    <mat-card-header>
+
+
+                        <mat-card-title>Name: {{event.name}}</mat-card-title>
+                        <mat-card-subtitle>Location: {{event.place}}</mat-card-subtitle>
+                        <mat-card-subtitle>Date: {{event.date}}</mat-card-subtitle>
+                        <mat-card-subtitle>Time: {{event.time}}</mat-card-subtitle>
+                        <mat-card-subtitle>Price: {{event.price | currency :'EUR'}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img class="slikaEventa" mat-card-image src={{event.picturePath}}>                    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                        alt="Photo of a Shiba Inu"> -->
+                    <mat-card-content>
+                        <p>
+                            {{event.shortDescribe}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions class="buttonPosition">
+                        <button (click)="onRegister()" class="button" mat-button>REGISTER FOR EVENT</button>
+
+
+                    </mat-card-actions>
+
+                </mat-card>
+                
+            </div>
+            </ng-container>
+        <!-- </ng-container>
+        </ng-container> -->
+
+    </div>
+
+    <app-bottom-bar class="botomBar"></app-bottom-bar>
+</div>

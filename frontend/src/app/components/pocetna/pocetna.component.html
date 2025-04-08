@@ -1,0 +1,180 @@
+<div class="glavna">
+
+
+    <mat-toolbar class="navBar">
+        <section>
+            <div class="example-label">NigniteEMS</div>
+            <!-- <form class="example-form">
+                <mat-form-field class="example-full-width ">
+                    <mat-label>Search</mat-label>
+                    <input matInput placeholder="Search events" value="">
+
+                </mat-form-field>
+
+
+
+            </form> -->
+
+
+        </section>
+        <div class="example-button-row">
+
+
+
+            <button class="btnn" (click)="onClick('AnchorId')" mat-stroked-button>Find Events</button>
+            <button class="btnn" a routerLink="/login" mat-stroked-button>Log In</button>
+            <button class="btnn" a routerLink="/signup" mat-stroked-button>Sign Up</button>
+
+
+        </div>
+
+    </mat-toolbar>
+    <!-- SLIKA -->
+    <div class="slika">
+        <img class="slika"
+            src="https://images.unsplash.com/photo-1643102842184-3be251fec986?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            >
+            <!-- "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" -->
+    </div>
+    <!-- Eventi -->
+
+    <div class="eventi">
+
+        <div id="AnchorId" class="eventi"></div>
+        <div class="expiriecesText2">
+          Events
+        </div>
+        
+        
+        <div a routerLink="/eventsList" class="seeAllText">
+            
+            
+                See All Events
+           
+          </div>
+    
+        <div class="listEvents">
+          <div (click)="onOpenEventInfo(event.name)" *ngFor="let event of events " class="event">
+            <!-- <div *ngIf="user.createdEvents?.length "> -->
+    
+            
+    
+            <mat-card class="example-card ech">
+              <mat-card-header>
+                <mat-card-title-group>
+                  <mat-card-title>{{event.name}}</mat-card-title>
+    
+                  <img mat-card-sm-image src={{event.picturePath}}>
+                </mat-card-title-group>
+              </mat-card-header>
+              <mat-card-content>
+                {{event.shortDescribe}}
+              </mat-card-content>
+            </mat-card>
+          </div>
+          </div>
+        <!-- </div>
+    
+    
+    
+      </div> -->
+
+    <!-- Events expiriences -->
+    <div class="expirienceMain">
+        <div class="expiriecesText" > 
+                <label >Users Experience</label>
+                
+        </div>
+        
+        <div class="expiriences">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar style="background-image: url('https://images.unsplash.com/photo-1664575599618-8f6bd76fc670?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') ;" class="example-header-image"></div>
+                    <mat-card-title>Lillia Jackson</mat-card-title>
+                    
+                </mat-card-header>
+                <img mat-card-image src="https://images.unsplash.com/photo-1664575599618-8f6bd76fc670?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-content class="userExpText">
+                    <p >
+                        The first time I decided to host an event, NigniteEMS had my back. 
+                        The event creation tool was a lifesaver. 
+                        I effortlessly inputted all the details and uploaded eye-catching visuals in one go. 
+                        Planning my local art exhibition felt like a walk in the park!
+                    </p>
+                </mat-card-content>
+                <!-- <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions> -->
+            </mat-card>
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar style="background-image: url('https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') ;" class="example-header-image"></div>
+                    <mat-card-title>Jonas Kakaroto</mat-card-title>
+                    
+                </mat-card-header>
+                <img mat-card-image src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-content class="userExpText">
+                    <p>
+                        NigniteEMS wasn't just about events; it was about building a community. 
+                        The social integration feature allowed me to connect with friends and fellow event enthusiasts 
+                        effortlessly.
+                        Coordinating plans and sharing the excitement on social media became second nature.
+                    </p>
+                </mat-card-content>
+                <!-- <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions> -->
+            </mat-card>
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar style="background-image: url('https://images.unsplash.com/photo-1484863137850-59afcfe05386?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') ;" class="example-header-image"></div>
+                    <mat-card-title>Hayley  Christa</mat-card-title>
+                    
+                </mat-card-header>
+                <img mat-card-image src="https://images.unsplash.com/photo-1484863137850-59afcfe05386?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-content class="userExpText">
+                    <p>
+                        What sets NigniteEMS apart is its diverse community of event-goers. 
+                        Engaging with people who shared similar interests added a new dimension to my events. 
+                        From thought-provoking discussions to forming lasting connections, 
+                        NigniteEMS wasn't just about events—it was about the people.
+                    </p>
+                </mat-card-content>
+                <!-- <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions> -->
+            </mat-card>
+
+
+
+        </div>
+
+    </div>
+
+    <!-- donji kontejner -->
+
+    <!-- <a name="bottom"></a>
+    <nav class="donjiKontejner">
+        <div class="copy-container">
+            ©Copyright2023
+        </div>
+        <div class="ems-container">
+            NigniteEMS
+        </div>
+
+
+    </nav> -->
+
+   
+
+
+</div>
+<app-bottom-bar></app-bottom-bar>

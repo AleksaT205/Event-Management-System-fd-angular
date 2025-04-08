@@ -1,0 +1,170 @@
+<ng-container *ngIf="spinner"> 
+    <div class="editUser">
+        <div class="spinertxt"> Save Changes</div>
+        <mat-spinner class="spiner"></mat-spinner> 
+    </div>
+    
+  </ng-container>
+<div class="mainDiv">
+
+    <div class="g">
+        <app-nav-bar></app-nav-bar>
+        <div class="text">Account Information</div>
+        <hr>
+    </div>
+
+    <div class="d">
+
+        <div class="profilInfo">
+
+            <mat-card class="example-card1">
+                <div class="imageandInfo">
+                    <div class="imageInfo">
+                        <mat-card-header>
+                            <mat-card-title-group>
+                                <div>
+                                    <mat-card-title>Profil Photo</mat-card-title>
+
+                                    <img mat-card-xl-image
+                                        src={{user.picturePath}}>
+
+                                </div>
+
+
+                            </mat-card-title-group>
+                        </mat-card-header>
+                        <mat-form-field class="example-full-width1">
+
+                            <mat-label>Insert picture URL</mat-label>
+                            <input #imageSrc class="urlInputTxt" matInput>
+
+                        </mat-form-field>
+                        <button type="button" (click)="onChangeUrl(imageSrc.value)" mat-raised-button class="btnUrl"
+                            color="primary">Insert</button>
+
+                    </div>
+
+                    <div class="infoInputs">
+
+
+                        <mat-card-content>
+                            <table class="example-full-width" cellspacing="0">
+                                <tr>
+                                    <td><mat-form-field class="example-full-width">
+                                            <mat-label>First name</mat-label>
+                                            <input value="{{user.firstName}}" (keyup)="onChangeName($event)" matInput>
+                                        </mat-form-field></td>
+
+                                </tr>
+                                <tr>
+
+                                    <td><mat-form-field class="example-full-width">
+                                            <mat-label>Last Name</mat-label>
+                                            <input value="{{user.lastName}}" (keyup)="onChangeLastName($event)"
+                                                matInput>
+                                        </mat-form-field></td>
+                                </tr>
+                            </table>
+
+                            <p>
+                                <mat-form-field>
+                                    <mat-label>Gender</mat-label>
+                                    <mat-select value={{user.gender}} (selectionChange)="onChangeGender($event)">
+                                        <mat-option value="M">Male</mat-option>
+                                        <mat-option value="F">Female</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </p>
+
+                            <!-- <p>
+                            <mat-form-field class="example-full-width datepicker">
+                                <mat-label>{{user.birthDay}}</mat-label>
+                                <input (dateChange)="onChangeDate($event)" matInput [matDatepicker]="picker">
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+
+                        </p> -->
+
+                            <p>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Email</mat-label>
+                                    <input value="{{user.email}}" (keyup)="onChangeEmail($event)" matInput>
+
+                                </mat-form-field>
+                            </p>
+                            <p>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>City</mat-label>
+                                    <input value="{{user.city}}" (keyup)="onChangeCity($event)" matInput>
+
+
+                                </mat-form-field>
+                            </p>
+                            <!-- <p>
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Username</mat-label>
+                              <input value="{{user.username}}" (keyup)="onChangeUsername($event)" matInput>
+                    
+                            </mat-form-field>
+                          </p> -->
+                            <p>
+                                <button (click)="onChangeUser()" mat-raised-button color="primary">Save Changes</button>
+                            </p>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+
+
+        </div>
+
+        <div class="eventsList">
+            <ng-container *ngFor="let event of userEventConections">
+
+
+
+                <div class="oneEvent">
+                    <mat-card class="example-card ">
+
+
+
+                        <mat-card-header>
+
+
+                            <mat-card-title>Name :{{event.forWhatEvent.name}}</mat-card-title>
+                            <mat-card-subtitle>Location: {{event.forWhatEvent.place}}</mat-card-subtitle>
+                            <mat-card-subtitle>Date: {{event.forWhatEvent.date}}</mat-card-subtitle>
+                            <mat-card-subtitle>Time: {{event.forWhatEvent.time}}</mat-card-subtitle>
+                            <mat-card-subtitle>Price: {{event.forWhatEvent.price | currency :'EUR'}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img class="picture" mat-card-image
+                        src={{event.forWhatEvent.picturePath}}>                        <!-- <img class="picture" mat-card-image
+                            src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+                        <mat-card-content class="alineTextRegistratedEvents">
+                            <p>
+                                {{event.forWhatEvent.shortDescribe}}
+                            </p>
+                        </mat-card-content>
+                       
+                        <div class="btnReview"> 
+                                
+                            <button (click)="onAddReview(event.forWhatEvent)"  mat-raised-button>Add Review</button>
+
+                        </div>
+                    </mat-card>
+
+                </div>
+            </ng-container>
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <app-bottom-bar></app-bottom-bar>
+</div>
+<app-review-popup [eventRev]="eventForReview"  (closePopup)="close()" *ngIf="review"></app-review-popup>
